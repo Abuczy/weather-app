@@ -1,45 +1,140 @@
-# Programowanie Front-end (szbalon projektu)
+# Weather App 🌤️
 
-W tym repozytorium znajdziecie szablon projektu, który można wykorzystać przy tworzeniu projektu semestralnego. Zawiera on skonfigurowane podstawowe biblioteki, które mogą być przydatne podczas pracy oraz proponowaną skturkturę katalogów.
+A React-based weather application that displays real-time weather data for UK cities using the OpenWeatherMap API.
 
-## Jak uruchomić projekt
+## Features
 
-W pierwszej kolejności należy użyć narzędzia NVM do wybrania odpowiedniej wersji Node.js:
-```shell
-nvm use
+- **Real-time weather data** - Current temperature, conditions, and 5-day forecast
+- **Multiple cities** - View weather for 6 UK cities (London, Manchester, Birmingham, Liverpool, Edinburgh, Bristol)
+- **Temperature units** - Switch between Celsius, Fahrenheit, and Kelvin
+- **Favourites** - Mark cities as favourites and view them on a dedicated page
+- **Search** - Filter cities by name
+- **Persistent settings** - Temperature units and favourites are saved in localStorage
+
+## Screenshots
+
+### Home Page
+- Displays all cities with current weather
+- Search bar for filtering
+- Star icon to add/remove favourites
+
+### City Details
+- Current temperature and conditions
+- Precipitation, wind, and cloud cover details
+- 5-day weather forecast
+
+### Favourites Page
+- Shows only starred cities
+- Quick access from header
+
+## Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| React 18 | Frontend framework |
+| React Router 6 | Page navigation |
+| Redux Toolkit | Global state management |
+| Axios | HTTP client for API requests |
+| OpenWeatherMap API | Real-time weather data |
+| CSS | Styling |
+
+## Project Structure
+
+```
+src/
+├── api/
+│   └── weather.js          # API integration with OpenWeatherMap
+├── components/
+│   └── CityCard/
+│       ├── CityCard.jsx    # Reusable city card component
+│       └── CityCard.css
+├── pages/
+│   ├── Home.jsx            # Main page with city list
+│   ├── Home.css
+│   ├── Details.jsx         # City weather details
+│   ├── Details.css
+│   ├── Favorites.jsx       # Favourite cities page
+│   └── Favorites.css
+├── slices/
+│   └── weatherSlice.js     # Redux slice for state management
+├── constants/
+│   └── temperatureUnits.js # Temperature unit constants
+├── App.jsx                 # Main app with routing
+├── App.css
+├── store.js                # Redux store configuration
+├── index.jsx               # Entry point
+└── index.css               # Global styles
 ```
 
-Jeżeli narzędzie zwróci błąd o tym, że obecnie nie jest zainstalowana żądana wersja Node'a, wówczas należy użyć komendy:
-```shell
-nvm install 20.18.0
-nvm use
+## Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd weather-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
+
+## API Configuration
+
+The app uses OpenWeatherMap API. The API key is already configured in `src/api/weather.js`.
+
+To use your own API key:
+1. Sign up at [OpenWeatherMap](https://openweathermap.org/api)
+2. Get your API key from your account
+3. Replace the `API_KEY` in `src/api/weather.js`
+
+```javascript
+const API_KEY = 'your-api-key-here';
 ```
 
-Następnie należy zainstalować biblioteki wymagane do uruchomienia projektu:
-```shell
-npm install
-```
+## Available Scripts
 
-Potem projekt można uruchomić w przeglądarce używając polecenia:
-```shell
-npm start
-```
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
 
-## Lista zainstalowanych bibliotek
+## React Hooks Used
 
-* React,
-* React Redux + ReduxJS Toolkit,
-* React Router Dom,
-* Axios,
-* ESLint + Prettier
-
-## Struktura katalogów
-
-* `components` - katalog zawierający pomniejsze komponenty, które mogą zostać wykorzystane do budowy podstron aplikacji,
-* `constants` - zawiera definicje wszystkich stałych, typów wyliczeniowych,
-* `functions` - katalog z funkcjami pomocniczymi,
-* `hooks` - zawiera definicje dedykowanych dla aplikacji hook'ów
-* `services` - katalog zawierający funkcje i klasy odpowiedzialne za np. komunikację z REST API,
-* `slices` - katalog zawierający definicje reducerów (biblioteka Redux).
+| Hook | Usage |
+|------|-------|
+| useState | Managing local component state (cities, loading, errors, search query) |
+| useEffect | Fetching data from API, scrolling to top |
+| useCallback | Memoizing functions (temperature conversion, weather icons) |
+| useMemo | Memoizing processed forecast data |
+| useSelector | Reading from Redux store |
+| useDispatch | Dispatching Redux actions |
+| useNavigate | Programmatic navigation |
+| useSearchParams | Reading URL parameters |
 
 
+## Browser Support
+
+- Chrome (recommended)
+- Firefox
+- Safari
+- Edge
+
+## Author
+
+Weather App - Frontend Programming Course Project
+
+## License
+
+This project is for educational purposes.

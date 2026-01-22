@@ -1,3 +1,77 @@
+/* app layout */
 .App {
-  text-align: center;
+  min-height: 100vh;
+}
+
+/* header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  width: 100%;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* przełącznik jednostek */
+.temp-toggle {
+  display: flex;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.temp-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.temp-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.temp-btn.active {
+  background: white;
+  color: #667eea;
+}
+/* header left */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.app-title {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.favorites-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.favorites-link:hover {
+  background: rgba(255, 255, 255, 0.25);
 }

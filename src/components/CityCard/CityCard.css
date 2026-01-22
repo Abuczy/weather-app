@@ -1,0 +1,94 @@
+/* CityCard Styles */
+
+.city-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+}
+
+/* Hover effect - podniesienie karty */
+.city-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Nagłówek z nazwą miasta */
+.city-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.city-card-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.country-code {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Ikona pogody */
+.weather-icon-large {
+  font-size: 64px;
+  margin: 16px 0;
+}
+
+/* Temperatura główna */
+.temperature-main {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+/* Opis pogody */
+.weather-description {
+  font-size: 16px;
+  text-transform: capitalize;
+  opacity: 0.9;
+  margin: 8px 0;
+}
+
+/* Feels like */
+.feels-like {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 12px;
+}
+/* gwiazdka ulubionych */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.favorite-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s, color 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+  color: white;
+}
+
+.favorite-btn.active {
+  color: #ffd700;
+}
