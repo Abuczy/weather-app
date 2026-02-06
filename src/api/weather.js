@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '9acddbdc00484aefc6ad27adb03b2951';
+const API_KEY = '';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // lista miast do pobrania
